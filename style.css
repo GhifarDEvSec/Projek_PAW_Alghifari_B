@@ -1,0 +1,44 @@
+body {
+  font-family: sans-serif;
+  margin: 0;
+  background: #f5f5f5;
+  color: #222;
+}
+
+header {
+  background: #2c3e50;
+  color: white;
+  padding: 2rem;
+  text-align: center;
+}
+
+main {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.minggu-list {
+  list-style: none;
+  padding: 0;
+}
+
+.minggu-list li {
+  background: white;
+  margin-bottom: 0.5rem;
+  padding: 1rem;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.minggu-list a {
+  text-decoration: none;
+  color: #2c3e50;
+  font-weight: bold;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  color: #777;
+}
