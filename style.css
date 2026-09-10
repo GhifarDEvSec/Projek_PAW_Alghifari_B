@@ -1,44 +1,183 @@
+:root {
+  --bg: #14161a;
+  --bg-raised: #1b1e24;
+  --text: #ededed;
+  --text-dim: #9a9fa6;
+  --accent: #e8a33d;
+  --rule: #2a2d33;
+  --serif: 'Newsreader', Georgia, serif;
+  --sans: 'Inter', -apple-system, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
-  font-family: sans-serif;
   margin: 0;
-  background: #f5f5f5;
-  color: #222;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  line-height: 1.5;
 }
 
-header {
-  background: #2c3e50;
-  color: white;
-  padding: 2rem;
-  text-align: center;
+/* Nav */
+.topnav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid var(--rule);
 }
 
-main {
-  max-width: 600px;
-  margin: 2rem auto;
-  padding: 0 1rem;
+.logo {
+  font-family: var(--serif);
+  font-size: 1.3rem;
+  font-style: italic;
 }
 
-.minggu-list {
+.nav-links a {
+  color: var(--text-dim);
+  text-decoration: none;
+  margin-left: 2rem;
+  font-size: 0.9rem;
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: var(--text);
+}
+
+/* Hero */
+.hero {
+  padding: 5rem 2rem 4rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.hero-eyebrow {
+  color: var(--accent);
+  font-size: 0.95rem;
+}
+
+.hero-title {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: clamp(3rem, 8vw, 6rem);
+  line-height: 0.98;
+  margin: 0;
+}
+
+.hero-side {
+  max-width: 480px;
+  align-self: flex-end;
+  border-left: 2px solid var(--accent);
+  padding-left: 1.5rem;
+}
+
+.hero-desc {
+  font-size: 1.05rem;
+  color: var(--text-dim);
+  margin: 0 0 1rem;
+}
+
+.hero-meta {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 0.85rem;
+  color: var(--text-dim);
+}
+
+/* Sections */
+.section-title {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.6rem;
+  margin-bottom: 2rem;
+}
+
+.progress,
+.about {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  border-top: 1px solid var(--rule);
+}
+
+.progress-list {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
-.minggu-list li {
-  background: white;
-  margin-bottom: 0.5rem;
-  padding: 1rem;
-  border-radius: 6px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+.progress-item {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 1.5rem;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--rule);
 }
 
-.minggu-list a {
-  text-decoration: none;
-  color: #2c3e50;
-  font-weight: bold;
+.progress-week {
+  color: var(--accent);
+  font-size: 0.9rem;
 }
 
-footer {
-  text-align: center;
-  padding: 1rem;
-  color: #777;
+.progress-desc {
+  color: var(--text-dim);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.about-block h3 {
+  font-size: 1rem;
+  margin: 0 0 0.5rem;
+}
+
+.about-block p {
+  color: var(--text-dim);
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+/* Footer */
+.contact {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 4rem 2rem 3rem;
+  border-top: 1px solid var(--rule);
+}
+
+.contact-line {
+  color: var(--text-dim);
+  margin: 0.3rem 0;
+}
+
+.copyright {
+  margin-top: 2rem;
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  opacity: 0.7;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .hero-side {
+    align-self: flex-start;
+  }
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+  .progress-item {
+    grid-template-columns: 1fr;
+    gap: 0.4rem;
+  }
 }
