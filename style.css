@@ -1,183 +1,379 @@
+Style · CSS
 :root {
-  --bg: #14161a;
-  --bg-raised: #1b1e24;
-  --text: #ededed;
-  --text-dim: #9a9fa6;
-  --accent: #e8a33d;
-  --rule: #2a2d33;
-  --serif: 'Newsreader', Georgia, serif;
-  --sans: 'Inter', -apple-system, sans-serif;
+  --bg: #101114;
+  --bg-raised: #1a1c20;
+  --bg-card: #1f2126;
+  --text: #f2f2f0;
+  --text-dim: #9b9ea3;
+  --accent: #d6d2c4;
+  --rule: #2c2e33;
+  --font: 'Archivo', -apple-system, sans-serif;
 }
-
+ 
 * {
   box-sizing: border-box;
 }
-
+ 
 body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
-  font-family: var(--sans);
-  line-height: 1.5;
+  font-family: var(--font);
+  line-height: 1.55;
 }
-
+ 
+a {
+  color: inherit;
+}
+ 
 /* Nav */
 .topnav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.5rem 2rem;
-  border-bottom: 1px solid var(--rule);
+  padding: 1.5rem 3rem;
 }
-
+ 
 .logo {
-  font-family: var(--serif);
-  font-size: 1.3rem;
-  font-style: italic;
+  font-weight: 900;
+  letter-spacing: 0.05em;
 }
-
+ 
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+ 
 .nav-links a {
-  color: var(--text-dim);
   text-decoration: none;
-  margin-left: 2rem;
   font-size: 0.9rem;
+  color: var(--text-dim);
   transition: color 0.2s ease;
 }
-
+ 
 .nav-links a:hover {
   color: var(--text);
 }
-
+ 
+.nav-cta {
+  text-decoration: none;
+  background: var(--text);
+  color: var(--bg);
+  padding: 0.55rem 1.2rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+ 
 /* Hero */
 .hero {
-  padding: 5rem 2rem 4rem;
-  max-width: 1000px;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 3rem;
+  padding: 3rem 3rem 5rem;
+  max-width: 1200px;
   margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
+  align-items: center;
 }
-
+ 
 .hero-eyebrow {
-  color: var(--accent);
-  font-size: 0.95rem;
-}
-
-.hero-title {
-  font-family: var(--serif);
-  font-weight: 600;
-  font-size: clamp(3rem, 8vw, 6rem);
-  line-height: 0.98;
-  margin: 0;
-}
-
-.hero-side {
-  max-width: 480px;
-  align-self: flex-end;
-  border-left: 2px solid var(--accent);
-  padding-left: 1.5rem;
-}
-
-.hero-desc {
-  font-size: 1.05rem;
   color: var(--text-dim);
+  font-size: 0.85rem;
   margin: 0 0 1rem;
 }
-
-.hero-meta {
-  display: flex;
-  gap: 1.5rem;
-  font-size: 0.85rem;
+ 
+.hero-title {
+  font-size: clamp(2.6rem, 6vw, 4.4rem);
+  font-weight: 900;
+  line-height: 0.95;
+  margin: 0 0 1.5rem;
+}
+ 
+.hero-desc {
   color: var(--text-dim);
+  max-width: 420px;
+  margin: 0 0 2rem;
 }
-
-/* Sections */
-.section-title {
-  font-family: var(--serif);
-  font-style: italic;
-  font-weight: 400;
-  font-size: 1.6rem;
-  margin-bottom: 2rem;
+ 
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
-
-.progress,
-.about {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 4rem 2rem;
-  border-top: 1px solid var(--rule);
-}
-
-.progress-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.progress-item {
-  display: grid;
-  grid-template-columns: 140px 1fr;
-  gap: 1.5rem;
-  padding: 1.25rem 0;
-  border-bottom: 1px solid var(--rule);
-}
-
-.progress-week {
-  color: var(--accent);
+ 
+.btn-primary {
+  text-decoration: none;
+  background: var(--text);
+  color: var(--bg);
+  padding: 0.8rem 1.5rem;
+  border-radius: 999px;
+  font-weight: 600;
   font-size: 0.9rem;
 }
-
-.progress-desc {
+ 
+.btn-ghost {
+  text-decoration: none;
+  border: 1px solid var(--rule);
+  padding: 0.8rem 1.5rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
   color: var(--text-dim);
 }
-
-.about-grid {
+ 
+.hero-media {
+  position: relative;
+}
+ 
+.hero-placeholder {
+  aspect-ratio: 3 / 4;
+  background: var(--bg-raised);
+  border: 1px dashed var(--rule);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-dim);
+  font-size: 0.9rem;
+}
+ 
+.hero-badge {
+  position: absolute;
+  bottom: -1rem;
+  right: -1rem;
+  background: var(--bg-card);
+  border: 1px solid var(--rule);
+  padding: 1rem 1.2rem;
+  border-radius: 10px;
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  text-align: right;
+}
+ 
+.hero-badge strong {
+  color: var(--text);
+  font-size: 0.95rem;
+}
+ 
+/* Stats */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  max-width: 1200px;
+  margin: 0 auto;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+ 
+.stat {
+  padding: 2rem;
+  text-align: center;
+  border-right: 1px solid var(--rule);
+}
+ 
+.stat:last-child {
+  border-right: none;
+}
+ 
+.stat-num {
+  display: block;
+  font-size: 2.2rem;
+  font-weight: 900;
+}
+ 
+.stat-label {
+  font-size: 0.8rem;
+  color: var(--text-dim);
+}
+ 
+/* Section shared */
+.section-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin: 0 0 2rem;
+}
+ 
+.progress,
+.skills,
+.process {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4.5rem 3rem;
+}
+ 
+.progress-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+ 
+.see-all {
+  text-decoration: none;
+  color: var(--text-dim);
+  font-size: 0.9rem;
+}
+ 
+.progress-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  gap: 1.5rem;
 }
-
-.about-block h3 {
-  font-size: 1rem;
-  margin: 0 0 0.5rem;
+ 
+.progress-card {
+  background: var(--bg-card);
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid var(--rule);
+  padding-bottom: 1.5rem;
 }
-
-.about-block p {
+ 
+.progress-thumb {
+  aspect-ratio: 16 / 10;
+  background: var(--bg-raised);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: var(--text-dim);
-  font-size: 0.95rem;
-  margin: 0;
+  font-size: 0.85rem;
+  margin-bottom: 1.25rem;
 }
-
-/* Footer */
+ 
+.progress-card h3 {
+  margin: 0 1.25rem 0.4rem;
+  font-size: 1.05rem;
+}
+ 
+.progress-card p {
+  margin: 0 1.25rem;
+  color: var(--text-dim);
+  font-size: 0.9rem;
+}
+ 
+/* Skills */
+.skills-tools {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 3rem;
+}
+ 
+.skills-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.75rem;
+}
+ 
+.skill-item h3 {
+  margin: 0 0 0.4rem;
+  font-size: 1rem;
+}
+ 
+.skill-item p {
+  margin: 0;
+  color: var(--text-dim);
+  font-size: 0.9rem;
+}
+ 
+.tools-box {
+  background: var(--bg-card);
+  border: 1px solid var(--rule);
+  border-radius: 14px;
+  padding: 1.75rem;
+}
+ 
+.tools-title {
+  margin: 0 0 1.25rem;
+  font-size: 1rem;
+}
+ 
+.tools-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.9rem;
+}
+ 
+.tools-grid span {
+  background: var(--bg-raised);
+  border-radius: 8px;
+  padding: 0.6rem 0.8rem;
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  text-align: center;
+}
+ 
+/* Process */
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+ 
+.step-num {
+  display: block;
+  color: var(--text-dim);
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+ 
+.process-step h3 {
+  margin: 0 0 0.4rem;
+  font-size: 1rem;
+}
+ 
+.process-step p {
+  margin: 0;
+  color: var(--text-dim);
+  font-size: 0.88rem;
+}
+ 
+/* Contact */
 .contact {
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 4rem 2rem 3rem;
+  padding: 5rem 3rem 3rem;
   border-top: 1px solid var(--rule);
 }
-
-.contact-line {
+ 
+.contact-title {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 900;
+  line-height: 1.1;
+  margin: 0 0 2rem;
+}
+ 
+.contact-info p {
   color: var(--text-dim);
   margin: 0.3rem 0;
 }
-
+ 
 .copyright {
-  margin-top: 2rem;
+  margin-top: 3rem;
   font-size: 0.8rem;
   color: var(--text-dim);
-  opacity: 0.7;
+  opacity: 0.6;
 }
-
+ 
 /* Responsive */
-@media (max-width: 640px) {
-  .hero-side {
-    align-self: flex-start;
-  }
-  .about-grid {
+@media (max-width: 800px) {
+  .hero {
     grid-template-columns: 1fr;
   }
-  .progress-item {
+  .hero-media {
+    order: -1;
+  }
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .stat:nth-child(2) {
+    border-right: none;
+  }
+  .progress-grid,
+  .process-steps {
     grid-template-columns: 1fr;
-    gap: 0.4rem;
+  }
+  .skills-tools {
+    grid-template-columns: 1fr;
+  }
+  .skills-list {
+    grid-template-columns: 1fr;
   }
 }
+ 
