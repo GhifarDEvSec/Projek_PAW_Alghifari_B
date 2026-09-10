@@ -1,24 +1,84 @@
+
+
+Index · HTML
 <!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>Portofolio - Progres Mingguan</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[Nama Kamu] — Portofolio Pengembangan Web</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <h1>Nama Kamu</h1>
-    <p>Laporan Perkembangan Mingguan</p>
+ 
+  <nav class="topnav">
+    <span class="logo">[Inisial]</span>
+    <div class="nav-links">
+      <a href="#progres">Progres</a>
+      <a href="#tentang">Tentang</a>
+      <a href="#kontak">Kontak</a>
+    </div>
+  </nav>
+ 
+  <header class="hero">
+    <div class="hero-eyebrow">Portofolio Kelas [Nama Mata Kuliah]</div>
+    <h1 class="hero-title">
+      [Nama<br>Lengkap Kamu]
+    </h1>
+    <div class="hero-side">
+      <p class="hero-desc">[Satu-dua kalimat singkat tentang dirimu dan apa yang sedang kamu pelajari/kerjakan di proyek ini.]</p>
+      <div class="hero-meta">
+        <span>Kelas [X]</span>
+        <span>Semester [Genap/Ganjil] 2026</span>
+      </div>
+    </div>
   </header>
-
-  <main>
-    <ul class="minggu-list">
-      <li><a href="minggu-1/">Minggu 1</a></li>
-    </ul>
-  </main>
-
-  <footer>
-    <p>&copy; 2026</p>
+ 
+  <section class="progress" id="progres">
+    <h2 class="section-title">Perkembangan Mingguan</h2>
+    <ol class="progress-list">
+      <li class="progress-item">
+        <span class="progress-week">Minggu 01</span>
+        <span class="progress-desc">[Ringkasan progres minggu ini akan diisi di sini]</span>
+      </li>
+      <li class="progress-item">
+        <span class="progress-week">Minggu 02</span>
+        <span class="progress-desc">[Ringkasan progres minggu ini akan diisi di sini]</span>
+      </li>
+      <li class="progress-item">
+        <span class="progress-week">Minggu 03</span>
+        <span class="progress-desc">[Ringkasan progres minggu ini akan diisi di sini]</span>
+      </li>
+    </ol>
+  </section>
+ 
+  <section class="about" id="tentang">
+    <h2 class="section-title">Tentang Proyek</h2>
+    <div class="about-grid">
+      <div class="about-block">
+        <h3>Tujuan</h3>
+        <p>[Jelaskan tujuan pembuatan website ini]</p>
+      </div>
+      <div class="about-block">
+        <h3>Teknologi</h3>
+        <p>[Sebutkan tools/teknologi yang dipakai: HTML, CSS, dst]</p>
+      </div>
+      <div class="about-block">
+        <h3>Status</h3>
+        <p>[Sedang berjalan / progres X dari Y minggu]</p>
+      </div>
+    </div>
+  </section>
+ 
+  <footer class="contact" id="kontak">
+    <h2 class="section-title">Kontak</h2>
+    <p class="contact-line">[emailkamu@contoh.com]</p>
+    <p class="contact-line">[Link GitHub kamu]</p>
+    <p class="copyright">&copy; 2026 [Nama Kamu]. Dibuat untuk keperluan tugas kuliah.</p>
   </footer>
+ 
 </body>
 </html>
+ 
